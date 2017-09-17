@@ -28,6 +28,8 @@ public class VistaFalabella extends javax.swing.JFrame {
     private void initComponents() {
 
         Sexo = new javax.swing.ButtonGroup();
+        CodigoVerificador1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -54,10 +56,16 @@ public class VistaFalabella extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        CodigoVerificador = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(CodigoVerificador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 20, -1));
+
+        jLabel16.setText("-");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 20, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/myStickyImg.png"))); // NOI18N
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, 30));
@@ -72,7 +80,7 @@ public class VistaFalabella extends javax.swing.JFrame {
 
         jLabel2.setText("Rut                                  :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 130, -1));
-        getContentPane().add(Rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 204, -1));
+        getContentPane().add(Rut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 120, -1));
 
         jLabel3.setText("Nombre y Apellidos         :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
@@ -158,6 +166,10 @@ public class VistaFalabella extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/masthead_frame_1388938793.png"))); // NOI18N
         jLabel12.setText("jLabel12");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 240));
+        getContentPane().add(CodigoVerificador, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 20, -1));
+
+        jLabel15.setText("-");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 20, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +237,8 @@ public class VistaFalabella extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> Año;
     public static javax.swing.JTextField Celular;
     public static javax.swing.JTextField CodigoSeguridad;
+    private javax.swing.JTextField CodigoVerificador;
+    public static javax.swing.JTextField CodigoVerificador1;
     public static javax.swing.JButton Continuar;
     public static javax.swing.JComboBox<String> Dia;
     public static javax.swing.JTextField Email;
@@ -240,6 +254,8 @@ public class VistaFalabella extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

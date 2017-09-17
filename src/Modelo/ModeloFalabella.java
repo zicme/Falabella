@@ -5,12 +5,15 @@ import static BaseDeDatos.Conexion.stmt;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author Pc
  */
 public class ModeloFalabella {
+
     public String Rut;
     public String Nombre;
     public String Celular;
@@ -21,28 +24,117 @@ public class ModeloFalabella {
     public String Dia;
     public String Mes;
     public String Año;
-    public ModeloFalabella(String Dia, String Mes,String Año,String Codigo,String Genero,String Rut,String Celular,String Email,String Renta,String Nombre){
-        this.Rut=Rut;
-        this.Dia=Dia;
-        this.Mes=Mes;
-        this.Año=Año;
-        this.Codigo=Codigo;
-        this.Genero=Genero;
-        this.Celular=Celular;
-        this.Email=Email;
-        this.Nombre=Nombre;
-        this.Renta=Renta;
+    public String RUT;
+    public String CodigoIdentificador;
+
+    public ModeloFalabella(String CodigoIdentificador, String Dia, String Mes, String Año, String Codigo, String Genero, String Rut, String Celular, String Email, String Renta, String Nombre) {
+        this.Rut = Rut;
+        this.Dia = Dia;
+        this.CodigoIdentificador = CodigoIdentificador;
+        this.Mes = Mes;
+        this.Año = Año;
+        this.Codigo = Codigo;
+        this.Genero = Genero;
+        this.Celular = Celular;
+        this.Email = Email;
+        this.Nombre = Nombre;
+        this.Renta = Renta;
+
     }
-    public void Ingresar(String Rut, String Nombre,String Celular,String Email,String Renta,String Genero,String Codigo,String Mes,String Dia,String Año) {
+
+    public ModeloFalabella(String RUT) {
+        this.RUT = RUT;
+    }
+    public boolean ValidarRut() {
+        Boolean lDevuelve = false;
+        int Ult = this.RUT.length();
+        int Largo = this.RUT.length() - 3;
+        int Constante = 2;
+        int Suma = 0;
+        int Digito = 0;
+        for (int i = Largo; i >= 0; i--) {
+
+            Suma = Suma + Integer.parseInt(this.RUT.substring(i, i + 1)) * Constante;
+            Constante = Constante + 1;
+            if (Constante == 8) {
+                Constante = 2;
+            }
+        }
+        String Ultimo = this.RUT.substring(Ult - 1).toUpperCase();
+        Digito = 11 - (Suma % 11);
+        if (Ultimo.equals("K") && Digito == 10) {
+            lDevuelve = true;
+        } else {
+            if (Digito == 11 && Ultimo.equals("0")) {
+                lDevuelve = true;
+            } else {
+                if (Digito == Integer.parseInt(Ultimo)) {
+                    lDevuelve = true;
+                }
+            }
+        }
+        return lDevuelve;
+    }
+    public void Ingresar(String CodigoVerificador, String rut, String Nombre, String Celular, String Email, String Renta, String Genero, String Codigo, String Mes, String Dia, String Año) {
+//Validar Nombre y Apellido       
+        Pattern nn = Pattern
+                .compile("[A-Z][a-zA-Z]*\\D{3}");
+        Matcher m = nn.matcher(Nombre);
+//Validar Correo
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(Email);
+        //Fin validar Correo
         String insertar;
         Connection con = getConnection();
         try {
-            if("umlta".equals(Codigo)){
-            insertar = "insert into Cliente values('" + Rut + "','" + Nombre + "','" + Celular + "','" + Email + "','" + Renta +"','" +Genero+"','" +Codigo+"','" +Mes+"','"+Dia+"','"+Año+"');";
-            stmt = con.createStatement();
-            stmt.executeUpdate(insertar);
-             }else{
-                JOptionPane.showMessageDialog(null, "ALERTA: Codigo Incorrecto");
+            if (rut.length() < 8) {
+                JOptionPane.showMessageDialog(null, "El  campo de rut tiene que ser de 8 digítos", "Error de captura", JOptionPane.ERROR_MESSAGE);
+            }
+            if (rut.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "El campo de rut  está vacío", "Error de captura", JOptionPane.ERROR_MESSAGE);
+            } else if (rut.length() == 8) {
+                if (Celular.length() < 9) {
+                    JOptionPane.showMessageDialog(null, "El  campo de Celular tiene que ser de 9 digítos", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                }
+                if (Celular.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "El campo de Celular  está vacío", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                } else if (Celular.length() == 9) {
+
+                    if (Renta.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "El campo de Renta  está vacío", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                    } else if (Renta.length() <= 15) {
+                        if ("umlta".equals(Codigo)) {
+                            RUT = rut + "-" + CodigoVerificador;
+                            ModeloFalabella sd = new ModeloFalabella(RUT);
+                            if (sd.ValidarRut() == true) {
+                                if (mather.find() == true) {
+                                    if (m.find() == true) {
+                                        insertar = "insert into Cliente values('" + rut + "-" + CodigoVerificador + "','" + Nombre + "','" + Celular + "','" + Email + "','" + Renta + "','" + Genero + "','" + Codigo + "','" + Mes + "/" + Dia + "/" + Año + "');";
+                                        stmt = con.createStatement();
+                                        stmt.executeUpdate(insertar);
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "El Nombre y Apellido ingresado es inválido.", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "El email ingresado es inválido.", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(null, "El rut es Invalido");
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "ALERTA: Codigo Incorrecto");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El  campo de Renta tiene que ser un rango de [0] a [15] digítos", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Campo de Celular NO VALIDO", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Campo de rut NO VALIDO", "Error de captura", JOptionPane.ERROR_MESSAGE);
             }
             stmt.close();
             con.close();

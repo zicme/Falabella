@@ -26,7 +26,7 @@ public class ControladorFalabella implements ActionListener {
         v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         v.setLocationRelativeTo(null);
         v.setVisible(true);
-
+      
     }
 
     @Override
@@ -34,9 +34,11 @@ public class ControladorFalabella implements ActionListener {
         if (v.Continuar == ae.getSource()) {
             try {
                 if (v.Masculino.isSelected()) {
-                    m.Ingresar(v.Rut.getText(), v.NombreApellidos.getText(), v.Celular.getText(), v.Email.getText(), v.Renta.getText(), "Masculino", v.CodigoSeguridad.getText(), (String) v.mes.getSelectedItem(),(String) v.Dia.getSelectedItem(),(String) v.Año.getSelectedItem());
+                    m.Ingresar(v.CodigoVerificador1.getText(), v.Rut.getText(), v.NombreApellidos.getText(), v.Celular.getText(), v.Email.getText(), v.Renta.getText(), "Masculino", v.CodigoSeguridad.getText(), (String) v.mes.getSelectedItem(),(String) v.Dia.getSelectedItem(),(String) v.Año.getSelectedItem());
                 } else if (v.Femenino.isSelected()) {
-                    m.Ingresar(v.Rut.getText(), v.NombreApellidos.getText(), v.Celular.getText(), v.Email.getText(), v.Renta.getText(), "Femenino", v.CodigoSeguridad.getText(),(String) v.mes.getSelectedItem(), (String) v.Dia.getSelectedItem(),(String) v.Año.getSelectedItem());
+                    m.Ingresar(v.CodigoVerificador1.getText(),v.Rut.getText(), v.NombreApellidos.getText(), v.Celular.getText(), v.Email.getText(), v.Renta.getText(), "Femenino", v.CodigoSeguridad.getText(),(String) v.mes.getSelectedItem(), (String) v.Dia.getSelectedItem(),(String) v.Año.getSelectedItem());
+                }else{
+                    JOptionPane.showMessageDialog(null, "Campo de sexo no ingresado");
                 }
             } catch (Exception ex) {
 

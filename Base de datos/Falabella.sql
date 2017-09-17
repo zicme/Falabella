@@ -1,7 +1,7 @@
 create database Falabella;
 use Falabella;
 create table Cliente(
-Rut varchar(11), primary key(Rut),
+Rut int(11), primary key(Rut),
 Nombre varchar(30), 
 Celular int(11), 
 email varchar(30), 
