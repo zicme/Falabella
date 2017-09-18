@@ -4,6 +4,7 @@ import static BaseDeDatos.Conexion.getConnection;
 import static BaseDeDatos.Conexion.stmt;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,6 +27,9 @@ public class ModeloFalabella {
     public String Año;
     public String RUT;
     public String CodigoIdentificador;
+    public char[] chr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
+'k', 'l', 'm','n','o','p','q','r','s','t','u','v','w', 'x','y','z'};
+    public char[] aleatorio = new char[4];
 
     public ModeloFalabella(String CodigoIdentificador, String Dia, String Mes, String Año, String Codigo, String Genero, String Rut, String Celular, String Email, String Renta, String Nombre) {
         this.Rut = Rut;
@@ -44,6 +48,12 @@ public class ModeloFalabella {
 
     public ModeloFalabella(String RUT) {
         this.RUT = RUT;
+    }
+
+    public void Aleatorio() {
+        for (int i = 0; i <= 3; i++) {
+            aleatorio[i] = chr[(int) (Math.random() * 4)];
+        }
     }
     public boolean ValidarRut() {
         Boolean lDevuelve = false;
@@ -75,6 +85,7 @@ public class ModeloFalabella {
         }
         return lDevuelve;
     }
+
     public void Ingresar(String CodigoVerificador, String rut, String Nombre, String Celular, String Email, String Renta, String Genero, String Codigo, String Mes, String Dia, String Año) {
 //Validar Nombre y Apellido       
         Pattern nn = Pattern
@@ -105,7 +116,7 @@ public class ModeloFalabella {
                     if (Renta.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "El campo de Renta  está vacío", "Error de captura", JOptionPane.ERROR_MESSAGE);
                     } else if (Renta.length() <= 15) {
-                        if ("umlta".equals(Codigo)) {
+                        if (Arrays.equals(aleatorio, Codigo.toCharArray())) {
                             RUT = rut + "-" + CodigoVerificador;
                             ModeloFalabella sd = new ModeloFalabella(RUT);
                             if (sd.ValidarRut() == true) {

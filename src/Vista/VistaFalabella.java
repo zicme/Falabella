@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Controlador.ControladorFalabella;
+import Modelo.ModeloFalabella;
+
 /**
  *
  * @author Pc
@@ -28,9 +31,10 @@ public class VistaFalabella extends javax.swing.JFrame {
     private void initComponents() {
 
         Sexo = new javax.swing.ButtonGroup();
+        jtt = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         CodigoVerificador1 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,17 +62,25 @@ public class VistaFalabella extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         CodigoVerificador = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        Reiniciar = new javax.swing.JCheckBoxMenuItem();
+        Salir = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtt.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jtt.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jtt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 120, 30));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 120, 30));
         getContentPane().add(CodigoVerificador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 20, -1));
 
         jLabel16.setText("-");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 20, -1));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/myStickyImg.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, 30));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medio_cir_med.png"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -171,6 +183,32 @@ public class VistaFalabella extends javax.swing.JFrame {
         jLabel15.setText("-");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 20, -1));
 
+        jMenu3.setText("Inicio");
+
+        Reiniciar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        Reiniciar.setSelected(true);
+        Reiniciar.setText("Reiniciar");
+        Reiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReiniciarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Reiniciar);
+
+        Salir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_TAB, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.META_MASK));
+        Salir.setSelected(true);
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Salir);
+
+        jMenuBar2.add(jMenu3);
+
+        setJMenuBar(jMenuBar2);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -197,6 +235,14 @@ public class VistaFalabella extends javax.swing.JFrame {
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContinuarActionPerformed
+
+    private void ReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReiniciarActionPerformed
+   
+    }//GEN-LAST:event_ReiniciarActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,17 +291,19 @@ public class VistaFalabella extends javax.swing.JFrame {
     public static javax.swing.JRadioButton Femenino;
     public static javax.swing.JRadioButton Masculino;
     public static javax.swing.JTextField NombreApellidos;
+    public javax.swing.JCheckBoxMenuItem Reiniciar;
     public static javax.swing.JTextField Renta;
     public static javax.swing.JTextField Rut;
+    public javax.swing.JCheckBoxMenuItem Salir;
     public static javax.swing.ButtonGroup Sexo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -264,6 +312,9 @@ public class VistaFalabella extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar2;
+    public javax.swing.JLabel jtt;
     public static javax.swing.JComboBox<String> mes;
     // End of variables declaration//GEN-END:variables
 }

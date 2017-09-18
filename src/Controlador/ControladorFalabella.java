@@ -4,6 +4,7 @@ import Modelo.ModeloFalabella;
 import Vista.VistaFalabella;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,8 @@ public class ControladorFalabella implements ActionListener {
         this.v.mes.addActionListener(this);
         this.v.Dia.addActionListener(this);
         this.v.Año.addActionListener(this);
+        this.v.Reiniciar.addActionListener(this);
+        this.v.Salir.addActionListener(this);
     }
 
     public void iniciar() {
@@ -26,9 +29,10 @@ public class ControladorFalabella implements ActionListener {
         v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         v.setLocationRelativeTo(null);
         v.setVisible(true);
+        m.Aleatorio();
+        v.jtt.setText(Arrays.toString(m.aleatorio));
       
     }
-
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (v.Continuar == ae.getSource()) {
@@ -44,6 +48,28 @@ public class ControladorFalabella implements ActionListener {
 
                 JOptionPane.showMessageDialog(null, "No se puede ingresar al sistema");
             }
+        }else if(v.Reiniciar==ae.getSource() ){
+             try {
+           v.dispose();
+            ModeloFalabella m = new ModeloFalabella("","","","","","","","","","","");
+        VistaFalabella v = new VistaFalabella();
+        ControladorFalabella c = new ControladorFalabella(m, v);
+        c.iniciar();
+            } catch (Exception ex) {
+
+                JOptionPane.showMessageDialog(null, "No se puede ingresar al sistema");
+            }
+        }else if(v.Salir==ae.getSource()){
+             try {
+                 System.exit(0);
+                  } catch (Exception ex) {
+
+                JOptionPane.showMessageDialog(null, "No se puede ingresar al sistema");
+            }
+             }
         }
-    }
+        
+        
+        
+    
 }
