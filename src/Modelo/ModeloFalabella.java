@@ -30,7 +30,14 @@ public class ModeloFalabella {
     public char[] chr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
 'k', 'l', 'm','n','o','p','q','r','s','t','u','v','w', 'x','y','z'};
     public char[] aleatorio = new char[4];
-
+    
+    public int Ult;
+    public int Largo;
+    public int Constante;
+    public int Suma;
+    public int Digito;
+    public String Ultimo;
+    
     public ModeloFalabella(String CodigoIdentificador, String Dia, String Mes, String Año, String Codigo, String Genero, String Rut, String Celular, String Email, String Renta, String Nombre) {
         this.Rut = Rut;
         this.Dia = Dia;
@@ -48,6 +55,8 @@ public class ModeloFalabella {
 
     public ModeloFalabella(String RUT) {
         this.RUT = RUT;
+        
+        
     }
 
     public void Aleatorio() {
@@ -57,11 +66,11 @@ public class ModeloFalabella {
     }
     public boolean ValidarRut() {
         Boolean lDevuelve = false;
-        int Ult = this.RUT.length();
-        int Largo = this.RUT.length() - 3;
-        int Constante = 2;
-        int Suma = 0;
-        int Digito = 0;
+         int Ult = this.RUT.length();
+         int Largo = this.RUT.length() - 3;
+         int Constante = 2;
+         int Suma = 0;
+         int Digito = 0;
         for (int i = Largo; i >= 0; i--) {
 
             Suma = Suma + Integer.parseInt(this.RUT.substring(i, i + 1)) * Constante;
@@ -70,7 +79,7 @@ public class ModeloFalabella {
                 Constante = 2;
             }
         }
-        String Ultimo = this.RUT.substring(Ult - 1).toUpperCase();
+         String Ultimo = this.RUT.substring(Ult - 1).toUpperCase();
         Digito = 11 - (Suma % 11);
         if (Ultimo.equals("K") && Digito == 10) {
             lDevuelve = true;
@@ -119,7 +128,7 @@ public class ModeloFalabella {
                         if (Arrays.equals(aleatorio, Codigo.toCharArray())) {
                             RUT = rut + "-" + CodigoVerificador;
                             ModeloFalabella sd = new ModeloFalabella(RUT);
-                            if (sd.ValidarRut() == true) {
+                            if (sd.ValidarRut()== true) {
                                 if (mather.find() == true) {
                                     if (m.find() == true) {
                                         insertar = "insert into Cliente values('" + rut + "-" + CodigoVerificador + "','" + Nombre + "','" + Celular + "','" + Email + "','" + Renta + "','" + Genero + "','" + Codigo + "','" + Mes + "/" + Dia + "/" + Año + "');";
@@ -147,7 +156,7 @@ public class ModeloFalabella {
             } else {
                 JOptionPane.showMessageDialog(null, "Campo de rut NO VALIDO", "Error de captura", JOptionPane.ERROR_MESSAGE);
             }
-            stmt.close();
+            //stmt.close();
             con.close();
         } catch (SQLException err) {
             JOptionPane.showMessageDialog(null, "ALERTA: Hubo un error desconocido");
