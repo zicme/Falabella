@@ -7,6 +7,8 @@ package Modelo;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -35,45 +37,46 @@ public class ModeloFalabellaTest {
     @After
     public void tearDown() {
     }
+    ModeloFalabella sc=new ModeloFalabella("","","","","","","", "","","","");
 
     /**
-     * Test of Aleatorio method, of class ModeloFalabella.
+     *
+     * @param letras
      */
-    @Test
-    public void testAleatorio() {
-        System.out.println("Aleatorio");
-        ModeloFalabella instance = new ModeloFalabella("", "", "", "", "", "", "", "", "", "", "");
-        instance.Aleatorio();
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+    
+
+    /**
+     *
+     * @param n
+     * @return
+     */
+   
+    public boolean cs(boolean n){
+        ModeloFalabella dfc=new ModeloFalabella("","","", "","","","", "","", "", "");
+        boolean f = dfc.Aleatorio();
+        n=true;
+        if (f==n) {
+            System.out.println("Comprobacion");
+        } else {
+            System.err.println("ss");
+             fail("The test case is prototype");
+        }
+        return false;
     }
-
-    /**
-     * Test of ValidarRut method, of class ModeloFalabella.
-     */
-    /*@Test
-    public void testValidarRut() {
-        System.out.println("ValidarRut");
-        ModeloFalabella instance = null;
-        boolean expResult = false;
-        boolean result = instance.ValidarRut();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of Ingresar method, of class ModeloFalabella.
-     */
+    
     @Test
+    public void test(){
+         ModeloFalabellaTest instance = new ModeloFalabellaTest();
+         instance.cs(true);
+    }
     public void testIngresar() {
         System.out.println("Ingresar");
-        String CodigoVerificador = "";
-        String rut = "";
-        String Nombre = "";
-        String Celular = "";
-        String Email = "";
-        String Renta = "";
+        String CodigoVerificador ="";
+        String rut = "18739";
+        String Nombre = "lipe eña";
+        String Celular = "3456789";
+        String Email = "skpi1@gmaicom";
+        String Renta = "dsfsd";
         String Genero = "";
         String Codigo = "";
         String Mes = "";
@@ -81,8 +84,14 @@ public class ModeloFalabellaTest {
         String Año = "";
         ModeloFalabella instance = new ModeloFalabella("", "", "", "", "", "", "", "", "", "", "");
         instance.Ingresar(CodigoVerificador, rut, Nombre, Celular, Email, Renta, Genero, Codigo, Mes, Dia, Año);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        boolean expResult= false;
+        boolean result=instance.Ingresar(CodigoVerificador, rut, Nombre, Celular, Email, Renta, Genero, Codigo, Mes, Dia, Año);
+        try{
+           assertEquals(expResult, result);
+        }catch(Exception e){
+       fail("The test case is prototype");
+        }
     }
+        
 
 }

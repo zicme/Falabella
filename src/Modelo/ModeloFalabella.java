@@ -59,10 +59,11 @@ public class ModeloFalabella {
         
     }
 
-    public void Aleatorio() {
+    public boolean Aleatorio() {
         for (int i = 0; i <= 3; i++) {
             aleatorio[i] = chr[(int) (Math.random() * 4)];
         }
+        return false;
     }
     public boolean ValidarRut() {
         Boolean lDevuelve = false;
@@ -95,7 +96,8 @@ public class ModeloFalabella {
         return lDevuelve;
     }
 
-    public void Ingresar(String CodigoVerificador, String rut, String Nombre, String Celular, String Email, String Renta, String Genero, String Codigo, String Mes, String Dia, String Año) {
+    public boolean Ingresar(String CodigoVerificador, String rut, String Nombre, String Celular, String Email, String Renta, String Genero, String Codigo, String Mes, String Dia, String Año) {
+Boolean lDevuelve = false;
 //Validar Nombre y Apellido       
         Pattern nn = Pattern
                 .compile("[A-Z][a-zA-Z]*\\D{3}");
@@ -164,5 +166,8 @@ public class ModeloFalabella {
             System.exit(0);
 
         }
+        
+        return lDevuelve;
     }
+    
 }

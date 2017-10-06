@@ -23,7 +23,7 @@ public class Conexion {
             JOptionPane.showMessageDialog(null,"ERROR: No se encuentra el driver de MYSQL");
         }
         try{
-            con=DriverManager.getConnection("jdbc:mysql://localhost/Falabella","root","felipe0419");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/Falabella","root","alumno");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"ERROR: No se pudo conectar a base de datos");
             System.exit(0);
