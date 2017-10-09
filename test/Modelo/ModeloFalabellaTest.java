@@ -85,7 +85,7 @@ public class ModeloFalabellaTest {
         }
     }
     public void nombre2(String nombre1) throws Excepcionnombre {
-         Pattern nn = Pattern.compile("[A-Z][a-zA-Z]*\\D{3}");
+        Pattern nn = Pattern.compile("[A-Z][a-zA-Z]*\\D{3}");
         Matcher m = nn.matcher(nombre1);
         if ((m.find() == false)){
             throw new Excepcionnombre ("Nombre Invalido");
@@ -261,6 +261,18 @@ public class ModeloFalabellaTest {
         }
     }
     
+    public void testCelular(){
+        String c1 = "966799437";
+        String c2 = "133";
+        String c3 = "9772443518";
+        if (c1.length()==9){
+            System.out.println("Numero de telefono valido");
+        }else{
+            System.err.println("Numero invalido");
+            fail("Error");
+        }
+    }
+    
     
     @Test
     public void test(){
@@ -268,14 +280,85 @@ public class ModeloFalabellaTest {
          //instance.ComprobaciónAleatorio(true);
         // instance.testRut();
         // instance.testNombre();
-         instance.testCorreo();
+         //instance.testCorreo();
         // instance.testAnio();
          //instance.testMes();
        //  instance.testDia();
         // instance.testRenta();
+        //instance.testCelular();
     }
     
     
-        
+    /*--------------- MUTACIONES ---------------------------------*/
+    
+    public void mNombre(String nombre){
+        Pattern nn = Pattern.compile("[A-Z][a-zA-Z]*\\D{3}");
+        Matcher m = nn.matcher(nombre);
+        if ((m.find() == true)){
+            System.out.println("Nombre Invalido");
+        }
+    }
+    
+    public boolean mRut(String RUT){
+        boolean lDevuelve = false;
+         int Ult = RUT.length();
+         int Largo = RUT.length() - 3;
+         int Constante = 2;
+         int Suma = 0;
+         int Digito = 0;
+        for (int i = Largo; i >= 0; i--) {
+
+            Suma = Suma + Integer.parseInt(RUT.substring(i, i + 1)) * Constante;
+            Constante = Constante - 1;
+            if (Constante == 8) {
+                Constante = 2;
+            }
+        }
+         String Ultimo = RUT.substring(Ult - 1).toUpperCase();
+        Digito = 11 - (Suma % 11);
+        if (Ultimo.equals("K") && Digito != 10) {
+            lDevuelve = true;
+        } else {
+            if (Digito != 11 && Ultimo.equals("0")) {
+                lDevuelve = true;
+            } else {
+                if (Digito != Integer.parseInt(Ultimo)) {
+                    lDevuelve = true;
+                }
+            }
+        }
+        return lDevuelve;
+    }
+    
+    public void mCorreo(String correo) throws Excepcioncorreo{
+     Pattern nn = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher m = nn.matcher(correo);
+        if ((m.find() != false)){
+            throw new Excepcioncorreo ("Correo Invalido");
+        }   
+    }
+    public void mComprobarAleatorio(boolean n){
+        ModeloFalabella dfc=new ModeloFalabella("","","", "","","","", "","", "", "");
+        boolean f = dfc.Aleatorio();
+        n=f;
+        if (f!=n) {
+            System.out.println("Comprobacion numeros aleatorios");
+        } else {
+            System.out.println("no a pasado el Test");
+            fail("The test case is prototype");
+        }
+    }
+    public void mCelular(String numeroC){
+        if ((numeroC.length()>9)||(numeroC.length()<9)){
+            System.out.println("Numero valido, puede continuar");
+        }
+    }
+    
+    public void mRenta(long monto){
+        if ((monto<999999999999999L)||(monto>0L)){
+            System.out.println("Monto valido");
+        }
+    }
 
 }
