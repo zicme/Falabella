@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.1.0-RC2" sequence="0" timestamp="1507693703688" analysisTimestamp="1507693866937" release="">
+  <Project>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\src\BaseDeDatos\Conexion.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\src\Controlador\ControladorFalabella.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\src\Modelo\Falabella.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\src\Modelo\ModeloFalabella.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\src\Vista\VistaFalabella.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\test\Modelo\ModeloFalabellaTest.java</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\BaseDeDatos\Conexion.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Controlador\ControladorFalabella.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Modelo\Falabella.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Modelo\ModeloFalabella.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$1.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$2.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$3.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$4.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$5.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$6.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$7.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$8.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella$9.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\classes\Vista\VistaFalabella.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$ExcepcionAnio.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$Excepcioncorreo.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$ExcepcionDias.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$ExcepcionMes.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$Excepcionnombre.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest$ExcepcionRenta.class</Jar>
+    <Jar>C:\Users\Pablo\Documents\GitHub\Falabella\build\test\classes\Modelo\ModeloFalabellaTest.class</Jar>
+    <AuxClasspathEntry>C:\Users\Pablo\Documents\GitHub\Falabella</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Pablo\Documents\GitHub\Falabella\.scannerwork\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Pablo\Documents\GitHub\Falabella\.scannerwork\findbugs\jsr305.jar</AuxClasspathEntry>
+    <WrkDir>C:\Users\Pablo\Documents\GitHub\Falabella\.scannerwork</WrkDir>
+  </Project>
+  <Errors errors="0" missingClasses="3">
+    <MissingClass>org.junit.Assert</MissingClass>
+    <MissingClass>org.netbeans.lib.awtextra.AbsoluteConstraints</MissingClass>
+    <MissingClass>org.netbeans.lib.awtextra.AbsoluteLayout</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Wed, 11 Oct 2017 00:48:23 -0300" total_classes="21" referenced_classes="329" total_bugs="0" total_size="702" num_packages="4" java_version="1.8.0_121" vm_version="25.121-b13" cpu_seconds="126.88" clock_seconds="95.37" peak_mbytes="335.15" alloc_mbytes="788.00" gc_seconds="2.35">
+    <FileStats path="BaseDeDatos/Conexion.java" bugCount="0" size="16"/>
+    <FileStats path="Controlador/ControladorFalabella.java" bugCount="0" size="47"/>
+    <FileStats path="Modelo/Falabella.java" bugCount="0" size="12"/>
+    <FileStats path="Modelo/ModeloFalabella.java" bugCount="0" size="93"/>
+    <FileStats path="Modelo/ModeloFalabellaTest.java" bugCount="0" size="269"/>
+    <FileStats path="Vista/VistaFalabella.java" bugCount="0" size="265"/>
+    <PackageStats package="BaseDeDatos" total_bugs="0" total_types="1" total_size="16">
+      <ClassStats class="BaseDeDatos.Conexion" sourceFile="Conexion.java" interface="false" size="16" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="Controlador" total_bugs="0" total_types="1" total_size="47">
+      <ClassStats class="Controlador.ControladorFalabella" sourceFile="ControladorFalabella.java" interface="false" size="47" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="Modelo" total_bugs="0" total_types="9" total_size="374">
+      <ClassStats class="Modelo.Falabella" sourceFile="Falabella.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabella" sourceFile="ModeloFalabella.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest" sourceFile="ModeloFalabellaTest.java" interface="false" size="233" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$ExcepcionAnio" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$ExcepcionDias" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$ExcepcionMes" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$ExcepcionRenta" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$Excepcioncorreo" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="Modelo.ModeloFalabellaTest$Excepcionnombre" sourceFile="ModeloFalabellaTest.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="Vista" total_bugs="0" total_types="10" total_size="265">
+      <ClassStats class="Vista.VistaFalabella" sourceFile="VistaFalabella.java" interface="false" size="203" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$1" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$2" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$3" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$4" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$5" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$6" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$7" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$8" sourceFile="VistaFalabella.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="Vista.VistaFalabella$9" sourceFile="VistaFalabella.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="13633" invocations="1648" avgMicrosecondsPerInvocation="8272" maxMicrosecondsPerInvocation="407905" standardDeviationMicrosecondsPerInvocation="23406"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="7887" invocations="1644" avgMicrosecondsPerInvocation="4797" maxMicrosecondsPerInvocation="380211" standardDeviationMicrosecondsPerInvocation="19907"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="6928" invocations="329" avgMicrosecondsPerInvocation="21059" maxMicrosecondsPerInvocation="759417" standardDeviationMicrosecondsPerInvocation="75746"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="6603" invocations="329" avgMicrosecondsPerInvocation="20072" maxMicrosecondsPerInvocation="847577" standardDeviationMicrosecondsPerInvocation="71557"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="3672" invocations="783" avgMicrosecondsPerInvocation="4690" maxMicrosecondsPerInvocation="208397" standardDeviationMicrosecondsPerInvocation="17644"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="2274" invocations="83" avgMicrosecondsPerInvocation="27405" maxMicrosecondsPerInvocation="1276591" standardDeviationMicrosecondsPerInvocation="142771"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="2001" invocations="83" avgMicrosecondsPerInvocation="24115" maxMicrosecondsPerInvocation="636759" standardDeviationMicrosecondsPerInvocation="82651"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="1720" invocations="329" avgMicrosecondsPerInvocation="5229" maxMicrosecondsPerInvocation="153705" standardDeviationMicrosecondsPerInvocation="17028"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="1441" invocations="83" avgMicrosecondsPerInvocation="17371" maxMicrosecondsPerInvocation="431167" standardDeviationMicrosecondsPerInvocation="58057"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="1372" invocations="83" avgMicrosecondsPerInvocation="16541" maxMicrosecondsPerInvocation="297728" standardDeviationMicrosecondsPerInvocation="43894"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="1330" invocations="83" avgMicrosecondsPerInvocation="16033" maxMicrosecondsPerInvocation="862268" standardDeviationMicrosecondsPerInvocation="95671"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="1324" invocations="329" avgMicrosecondsPerInvocation="4025" maxMicrosecondsPerInvocation="127393" standardDeviationMicrosecondsPerInvocation="14171"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="1297" invocations="329" avgMicrosecondsPerInvocation="3943" maxMicrosecondsPerInvocation="299992" standardDeviationMicrosecondsPerInvocation="22119"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="1274" invocations="423" avgMicrosecondsPerInvocation="3013" maxMicrosecondsPerInvocation="159372" standardDeviationMicrosecondsPerInvocation="15226"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="1270" invocations="91" avgMicrosecondsPerInvocation="13960" maxMicrosecondsPerInvocation="450080" standardDeviationMicrosecondsPerInvocation="51317"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="1251" invocations="91" avgMicrosecondsPerInvocation="13750" maxMicrosecondsPerInvocation="423589" standardDeviationMicrosecondsPerInvocation="48404"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="1196" invocations="1591" avgMicrosecondsPerInvocation="751" maxMicrosecondsPerInvocation="219689" standardDeviationMicrosecondsPerInvocation="6817"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1195" invocations="329" avgMicrosecondsPerInvocation="3632" maxMicrosecondsPerInvocation="370438" standardDeviationMicrosecondsPerInvocation="26593"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="1073" invocations="329" avgMicrosecondsPerInvocation="3264" maxMicrosecondsPerInvocation="108568" standardDeviationMicrosecondsPerInvocation="12062"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1030" invocations="83" avgMicrosecondsPerInvocation="12418" maxMicrosecondsPerInvocation="318040" standardDeviationMicrosecondsPerInvocation="41852"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="931" invocations="329" avgMicrosecondsPerInvocation="2832" maxMicrosecondsPerInvocation="190910" standardDeviationMicrosecondsPerInvocation="15188"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="855" invocations="329" avgMicrosecondsPerInvocation="2601" maxMicrosecondsPerInvocation="153455" standardDeviationMicrosecondsPerInvocation="14163"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="852" invocations="329" avgMicrosecondsPerInvocation="2590" maxMicrosecondsPerInvocation="202321" standardDeviationMicrosecondsPerInvocation="16390"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="823" invocations="329" avgMicrosecondsPerInvocation="2503" maxMicrosecondsPerInvocation="122243" standardDeviationMicrosecondsPerInvocation="9772"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -15,50 +15,24 @@ import java.util.regex.Pattern;
  */
 public class ModeloFalabella {
 
-    public String Rut;
-    public String Nombre;
-    public String Celular;
-    public String Genero;
-    public String Codigo;
-    public String Email;
-    public String Renta;
-    public String Dia;
-    public String Mes;
-    public String Año;
+    public static final String Rut="";
+    public static final String Nombre="";
+    public static final String Celular="";
+    public static final String Genero="";
+    public static final String Codigo="";
+    public static final String Email="";
+    public static final String Renta="";
+    public static final String Dia="";
+    public static final String Mes="";
+    public static final String Año="";
     public String RUT;
-    public String CodigoIdentificador;
-    public char[] chr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
+    public static final String CodigoIdentificador="";
+    public static final char[] chr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 
 'k', 'l', 'm','n','o','p','q','r','s','t','u','v','w', 'x','y','z'};
-    public char[] aleatorio = new char[4];
-    
-    public int Ult;
-    public int Largo;
-    public int Constante;
-    public int Suma;
-    public int Digito;
-    public String Ultimo;
-    
-    public ModeloFalabella(String CodigoIdentificador, String Dia, String Mes, String Año, String Codigo, String Genero, String Rut, String Celular, String Email, String Renta, String Nombre) {
-        this.Rut = Rut;
-        this.Dia = Dia;
-        this.CodigoIdentificador = CodigoIdentificador;
-        this.Mes = Mes;
-        this.Año = Año;
-        this.Codigo = Codigo;
-        this.Genero = Genero;
-        this.Celular = Celular;
-        this.Email = Email;
-        this.Nombre = Nombre;
-        this.Renta = Renta;
-
-    }
-
+    public static final char[] aleatorio = new char[4];
     public ModeloFalabella(String RUT) {
-        this.RUT = RUT;
-        
-        
+        this.RUT = RUT;   
     }
-
     public boolean Aleatorio() {
         for (int i = 0; i <= 3; i++) {
             aleatorio[i] = chr[(int) (Math.random() * 4)];

@@ -23,7 +23,7 @@ public class Falabella {
         } catch (Exception e) {
 
         }
-        ModeloFalabella m = new ModeloFalabella("","","","","","","","","","","");
+        ModeloFalabella m = new ModeloFalabella("");
         VistaFalabella v = new VistaFalabella();
         ControladorFalabella c = new ControladorFalabella(m, v);
         c.iniciar();

@@ -46,14 +46,14 @@ public class ModeloFalabellaTest {
      */
     /**
      *
-     * @param n
+     * @param nn
      * @return
      */
-    public boolean ComprobaciónAleatorio(boolean n) {
-        ModeloFalabella dfc = new ModeloFalabella("", "", "", "", "", "", "", "", "", "", "");
+    public boolean ComprobaciónAleatorio() {
+       boolean nn=false;
+        ModeloFalabella dfc = new ModeloFalabella("");
         boolean f = dfc.Aleatorio();
-        n = f;
-        if (f == n) {
+        if (f == nn) {
             System.out.println("Comprobacion numeros aleatorios");
         } else {
             System.out.println("no a pasado el Test");
@@ -291,7 +291,7 @@ public class ModeloFalabellaTest {
   //  @Test
     public void test(){
          ModeloFalabellaTest instance = new ModeloFalabellaTest();
-         //instance.ComprobaciónAleatorio(true);
+         //instance.ComprobaciónAleatorio();
         // instance.testRut();
         // instance.testNombre();
          //instance.testCorreo();
@@ -376,8 +376,10 @@ public class ModeloFalabellaTest {
         }
     }
 
-    public void mComprobarAleatorio(boolean n) {
-        ModeloFalabella dfc = new ModeloFalabella("", "", "", "", "", "", "", "", "", "", "");
+    public void mComprobarAleatorio() {
+        //depende del boolean
+        boolean n=false;
+        ModeloFalabella dfc = new ModeloFalabella("");
         boolean f = dfc.Aleatorio();
         if (f == n) {
             System.out.println("Mutacion  aleatoria viva");
@@ -400,6 +402,6 @@ public class ModeloFalabellaTest {
         // instance.mRenta(555555557);
         //instance.mRenta(-5);
         // instance.mComprobarAleatorio(false);
-        instance.mComprobarAleatorio(false);
+        instance.mComprobarAleatorio();
     }
 }

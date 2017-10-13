@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class ControladorFalabella implements ActionListener {
 
-    private ModeloFalabella m;
+    private final ModeloFalabella m;
     public VistaFalabella v;
 
     public ControladorFalabella(ModeloFalabella m, VistaFalabella v) {
@@ -51,7 +51,7 @@ public class ControladorFalabella implements ActionListener {
         }else if(v.Reiniciar==ae.getSource() ){
              try {
            v.dispose();
-            ModeloFalabella m = new ModeloFalabella("","","","","","","","","","","");
+            ModeloFalabella m = new ModeloFalabella("");
         VistaFalabella v = new VistaFalabella();
         ControladorFalabella c = new ControladorFalabella(m, v);
         c.iniciar();

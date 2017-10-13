@@ -12,8 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-public class Conexion {
-    public  static Statement stmt;
+ public class Conexion {
+    public  static  Statement  stmt;
     public static Connection con;
     
     public static Connection getConnection(){
